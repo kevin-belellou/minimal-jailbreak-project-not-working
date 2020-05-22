@@ -9,6 +9,17 @@ public class Main {
     public static void main(String[] args) {
         @Jailbreak SampleClass sample = new SampleClass();
         sample.helloWorld();
-        sample.helloWorld(new AbstractMap.SimpleEntry<>("Foo", "Bar"));
+
+        try {
+            sample.helloWorld(new AbstractMap.SimpleEntry<>("Foo", "Bar"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            sample.helloWorld(new String[] {"Foo", "Bar"});
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
